@@ -12,7 +12,7 @@ import uasyncio
 
 
 
-def stepNfall():
+async def stepNfall(n,x):
 i2c = I2C(0, sda=Pin(21), scl=Pin(22), freq=400000)
 imu = MPU6050(i2c)
 n = 0
@@ -42,7 +42,7 @@ x = 0
                     mqtt.sync_with_adafruitIO()
                     
             time.sleep(0.2)
-            
+            await uasyncio.sleep(0.04)
         except KeyboardInterrupt:
                 print('Ctrl-C pressed...exiting')
                 mqtt.c.disconnect()
