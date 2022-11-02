@@ -1,13 +1,12 @@
 from machine import UART
 from micropyGPS import MicropyGPS
 import _thread
-import uasyncio
 
 # denne variabel opdateres til at holde gps data
 gps_to_adafruit = None
 # instans af gps klassen opdateres her
 gps = None
-async def gps_main():
+def gps_main():
     uart = UART(2, baudrate=9600, bits=8, parity=None, stop=1, timeout=5000, rxbuf=1024)
     global gps
     gps = MicropyGPS()
@@ -44,4 +43,3 @@ async def gps_main():
             gps_to_adafruit = gps_ada
 
 _thread.start_new_thread(gps_main, ())
-await uasyncio.sleep(0.04)

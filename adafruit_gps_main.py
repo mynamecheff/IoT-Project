@@ -8,7 +8,7 @@ from time import sleep
 #np = neopixel.NeoPixel(Pin(21), 12)
 i = 0
 gps1 = 0
-while True:
+def gps_main():
     try:
         # Denne variabel vil have GPS data når den har fået kontakt til sattellitterne ellers vil den være None
         gps_data = gps_funktion.gps_to_adafruit
