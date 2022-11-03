@@ -16,17 +16,6 @@ def gps_main():
             for char in buf:
                 gps.update(chr(char)) # Note the conversion to to chr, UART outputs ints normally
         
-        #different gps methods that can be used:
-        
-        #print('UTC Timestamp:', gps.timestamp)
-        #print('Date:', gps.date_string('long'))
-        #print('Satellites:', gps.satellites_in_use)
-        #print('Altitude:', gps.altitude)
-        #print('Latitude:', gps.latitude_string())
-        #print('Longitude:', gps.longitude_string())
-        #print('Horizontal Dilution of Precision:', gps.hdop)
-        #print('Compas direction: ', gps.compass_direction())
-        
         formattedLat = gps.latitude_string()
         formattedLat = formattedLat[:-3]
         formattedLon = gps.longitude_string()

@@ -1,9 +1,7 @@
 '''
-Using IMU to messure if someone has fallen and count it!
+Using IMU to messure steps and if someone has fallen
 To use install the advanced IMU lib
-TODO: stepcounter (minus the first value with the second and compare with a defined number)
 '''
-
 from imu import MPU6050 
 import time
 from machine import Pin, I2C

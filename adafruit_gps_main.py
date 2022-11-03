@@ -21,7 +21,6 @@ def gps_main():
         #For at vise lokationsdata på adafruit dashboard skal det sendes til feed med /csv til sidst
         #For at sende til GPS lokationsdata til et feed kaldet mapfeed kan det gøres således:
         #mqtt.web_print(gps_data, 'DIT_ADAFRUIT_USERNAME/feeds/mapfeed/csv')        
-        sleep(4) # vent mere end 3 sekunder mellem hver besked der sendes til adafruit
         
         if gps_data == gps1:
             print("please move or something")
